@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+Install Visual studio code extention for shortcuts
+ES7 React/Redux/GraphQL/React-Native snippets
+write rafce it will create a bolerplate for compoent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Stores
+Install the Redux Tollkit 
+Create store.js 
+Create appSlice.js
+in App.js <Provider store={store}> (Provide a store to aour app)
+Through Browser extenstion we can check store is working or not
+Onlick Button we are calling slice we need to use the useDispatch Hook for calling any slice function
+Get the store/slice value using useSelector
 
-In the project directory, you can run:
+call the Youtube APIs
+https://developers.google.com/youtube/v3/docs/videos/list
+create constant for url and call the api using useEffect hook
+useEfeect(() => {
+},[]) // [] call it once
 
-### `npm start`
+install react router dom
+CreateBrowser Router function in app.js for routing
+const appRputer = createBrowserRouter([{
+    path:'',
+    element:Component name
+}])
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Create a Higher order function
+A function which takes a container and return the same container in the function
 
-### `npm test`
+When we need to use Higher order fxn
+i want to do some modification in videCardContrainer and retunr videocardContainer. example i want border in videoContainer
+eg: const fn = (VideoCard) => {
+    <Videocard/>
+}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Now we are using Debouncing for search bar
+typeSlow = 200ms
+typeFast = 30ms
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Performance
+-iphone pre max= 14 letter * 1000 = 14000
+- with debouncing 3 api calls * 1000 = 3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Debouncing with 200ms
+- If difference with 2 keys strokes is <200ms - Decline API call
+- 200ms > make an api call
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Key - i (call the api after 200ms)
+rendedr the component
+useEffecct()
+start timer ==> make api call after 200ms
 
-### `npm run eject`
+key- ip (if user enter another key within 200ms it will destroy the component and start this call after 200ms so api will call ip key not in i)
+destroy the component (useEffect rreturn method calling clearTimeOut)
+re-render the component
+useEffect()
+start timer ==> make api call after 200ms
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Used Recursive for Comments
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Live Chat
+Web Socket --> handshaking UI--><--Server --> No Interval (If we want real data like Whatsapp, Trading Apps)
+API Polling --> UI-->Server -->Interval (eg if we want some data in 10 second not real time data required we can wait for 10 seconds like gmail, cricbuzz)
